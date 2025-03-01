@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { run } from 'vite-plugin-run'
+import { iconsSpritesheet } from "vite-plugin-icons-spritesheet"
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -17,5 +19,17 @@ export default defineConfig({
         ]
       }
     ]),
+    iconsSpritesheet({
+      inputDir: "assets/icons/optimized",
+      outputDir: "src/components/icon",
+      withTypes: true,
+      typesOutputFile: "src/types/icon.d.ts",
+      fileName: "spritesheet.svg",
+      iconNameTransformer: (name) => {
+        return name.normalize()
+          .split(/[^0-9a-zA-Z]/g)
+          .map((part) => part.toLowerCase()).join("-")
+      }
+    }),
   ],
 })
