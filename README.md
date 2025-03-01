@@ -1,54 +1,31 @@
-# React + TypeScript + Vite
+# react-icons
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an example of how I would implement icons using `React` and `Vite.js`.
 
-Currently, two official plugins are available:
+## How does this work?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The process used in this example is composed by a couple simple steps.
 
-## Expanding the ESLint configuration
+1. Optimization of icons
+   - The icons are optimized using `svgo`
+   - [`svgo.config.cjs`](./config/svgo.config.cjs)
+   - `icons:optimize` from [package.json](./package.json)
+   - Run script in [vite.config.ts](./vite.config.ts)
+2. Creation of spritesheet from optimized icons
+   - The icons are put into a spritesheet using `vite-plugin-icons-spritesheet` in in [vite.config.ts](./vite.config.ts)
+     - This generates the spritesheet and the [icon.d.ts](./src/types/icon.d.ts) types
+3. Usage of spritesheet
+   - Use the spritesheet with the [Icon component](./src/components/icon/index.tsx)
+     - This allows us to pass any props to the `svg` element of the icon
+     - Also to have only one file import for all the icons
+     - Everything should be typesafe
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Usage example
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```tsx
+<Icon name="<icon_name>" />
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Notes
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+The icons used as example in this repository are from [Tabler Icons](https://tabler.io/icons).
