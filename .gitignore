@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Optimized icons
+assets/icons/optimized/*.svg

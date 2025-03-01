@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "icons:optimize": "mkdir ./assets/tmp && svgo --config ./config/svgo.config.cjs -f ./assets/icons/ -o ./assets/tmp && rm -rdf ./assets/icons/optimized && mv ./assets/tmp/ ./assets/icons/optimized/; rm -dfr ./assets/tmp"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",
