@@ -48,9 +48,7 @@ export default defineConfig({
       typesOutputFile: "src/types/colored-icon.d.ts",
       fileName: "spritesheet.svg",
       iconNameTransformer: (name) => {
-        return name.normalize()
-          .split(/[^0-9a-zA-Z]/g)
-          .map((part) => part.toLowerCase()).join("-")
+        return name.normalize().toLowerCase()
       }
     }),
   ],

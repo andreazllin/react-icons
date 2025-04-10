@@ -3,9 +3,9 @@
 export const iconNames = [
   "debt",
   "database",
-  "data-sheet",
-  "data-recovery",
-  "data-protection",
+  "data_sheet",
+  "data_recovery",
+  "data_protection",
 ] as const
 
 export type IconName = typeof iconNames[number]
