@@ -31,5 +31,27 @@ export default defineConfig({
           .map((part) => part.toLowerCase()).join("-")
       }
     }),
+    run([
+      {
+        name: "Optimize colored icons SVGs",
+        run: ["npm", "run", "colored:optimize"],
+        pattern: [
+          "assets/colored/*.svg",
+          "config/colored-svgo.config.cjs"
+        ]
+      }
+    ]),
+    iconsSpritesheet({
+      inputDir: "assets/colored/optimized",
+      outputDir: "src/components/colored-icon",
+      withTypes: true,
+      typesOutputFile: "src/types/colored-icon.d.ts",
+      fileName: "spritesheet.svg",
+      iconNameTransformer: (name) => {
+        return name.normalize()
+          .split(/[^0-9a-zA-Z]/g)
+          .map((part) => part.toLowerCase()).join("-")
+      }
+    }),
   ],
 })

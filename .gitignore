@@ -25,6 +25,8 @@ dist-ssr
 
 # Optimized icons
 assets/icons/optimized/*.svg
+assets/colored/optimized/*.svg
 
 # Spritesheet
 src/components/icon/spritesheet.svg
+src/components/colored-icon/spritesheet.svg
