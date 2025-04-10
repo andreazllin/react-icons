@@ -29,3 +29,4 @@ The process used in this example is composed by a couple simple steps.
 ### Notes
 
 The icons used as example in this repository are from [Tabler Icons](https://tabler.io/icons).
+The colored icons used as example in this repository are from [icons8](https://github.com/icons8/flat-color-icons).
