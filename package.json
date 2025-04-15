@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "icons:optimize": "mkdir ./assets/tmp && svgo --config ./config/svgo.config.cjs -f ./assets/icons/ -o ./assets/tmp && rm -rdf ./assets/icons/optimized && mv ./assets/tmp/ ./assets/icons/optimized/; rm -dfr ./assets/tmp",
-    "colored:optimize": "mkdir ./assets/colored-tmp && svgo --config ./config/colored-svgo.config.cjs -f ./assets/colored/ -o ./assets/colored-tmp && rm -rdf ./assets/colored/optimized && mv ./assets/colored-tmp/ ./assets/colored/optimized/; rm -dfr ./assets/colored-tmp"
+    "colored:optimize": "mkdir ./assets/colored-tmp && svgo --config ./config/colored-svgo.config.cjs -f ./assets/colored/ -o ./assets/colored-tmp && rm -rdf ./assets/colored/optimized && mv ./assets/colored-tmp/ ./assets/colored/optimized/; rm -dfr ./assets/colored-tmp",
+    "duotone:optimize": "mkdir ./assets/duotone-tmp && svgo --config ./config/duotone-svgo.config.cjs -f ./assets/duotone/ -o ./assets/duotone-tmp && rm -rdf ./assets/duotone/optimized && mv ./assets/duotone-tmp/ ./assets/duotone/optimized/; rm -dfr ./assets/duotone-tmp"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",

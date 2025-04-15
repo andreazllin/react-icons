@@ -51,5 +51,27 @@ export default defineConfig({
         return name.normalize().toLowerCase()
       }
     }),
+    run([
+      {
+        name: "Optimize duotone icons SVGs",
+        run: ["npm", "run", "duotone:optimize"],
+        pattern: [
+          "assets/duotone/*.svg",
+          "config/svgo.config.cjs"
+        ]
+      }
+    ]),
+    iconsSpritesheet({
+      inputDir: "assets/duotone/optimized",
+      outputDir: "src/components/duotone-icon",
+      withTypes: true,
+      typesOutputFile: "src/types/duotone-icon.d.ts",
+      fileName: "spritesheet.svg",
+      iconNameTransformer: (name) => {
+        return name.normalize()
+          .split(/[^0-9a-zA-Z]/g)
+          .map((part) => part.toLowerCase()).join("-")
+      }
+    }),
   ],
 })
