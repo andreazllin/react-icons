@@ -39,6 +39,14 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm ci
+
+      - name: Optimize icons
+        run: npm run icons:optimize
+      - name: Optimize colored icons
+        run: npm run colored:optimize
+      - name: Optimize duotone icons
+        run: npm run duotone:optimize
+
       - name: Build
         run: npm run build
       - name: Setup Pages
