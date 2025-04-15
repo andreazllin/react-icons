@@ -20,19 +20,19 @@ function App() {
         type="icon"
         size={48}
         name="a-b-off"
-        className="text-cyan-600"
+        className="text-violet-600"
       />
       <CombinedIcon
         type="colored"
         size={48}
         name="data_sheet"
-        className="text-cyan-600"
+        className="text-violet-600"
       />
       <CombinedIcon
         type="duotone"
         size={48}
         name="g-translate"
-        className="text-cyan-600"
+        className="text-violet-600"
       />
     </>
   );
