@@ -44,6 +44,8 @@ or with multiple
 
 > [!CAUTION]
 > There is a caveat to this solution, if using a colored icon pack and you need a variant of that (eg. you have a grey [2 tone](./.github/two-tone-icons.gif) "Trash" icon, but you also need a red colored one), I suggest to make another spritesheet for all red variants or, if you don't have that many of these variants, to make a different spritesheet containing all of the modified icons.
+>
+> Note that this depends on how the icons are made, if they all use a single color but handle the color using svg props (like this [example](./.github/working-duotone-example.png)) you can use this solution without any problems!
 
 
 > [!TIP]
@@ -55,4 +57,6 @@ or with multiple
 
 - The colored icons used as example in this repository are from [icons8/flat-color-icons](https://github.com/icons8/flat-color-icons).
 
-- The example for two-tone-icons is from [dribbble.com/gaddafirusli](https://dribbble.com/shots/3562554-Two-tone-icons)
+- The duo-tone icons used as example in this repository are from [fazdiu/duo-icons](https://github.com/fazdiu/duo-icons).
+
+- The image example for two-tone-icons is from [dribbble.com/gaddafirusli](https://dribbble.com/shots/3562554-Two-tone-icons)
