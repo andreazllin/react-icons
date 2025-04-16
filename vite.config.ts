@@ -23,7 +23,7 @@ export default defineConfig({
       inputDir: "assets/icons/optimized",
       outputDir: "src/components/icon",
       withTypes: true,
-      typesOutputFile: "src/types/icon.d.ts",
+      typesOutputFile: "src/types/icon.ts",
       fileName: "spritesheet.svg",
       iconNameTransformer: (name) => {
         return name.normalize()
@@ -45,7 +45,7 @@ export default defineConfig({
       inputDir: "assets/colored/optimized",
       outputDir: "src/components/colored-icon",
       withTypes: true,
-      typesOutputFile: "src/types/colored-icon.d.ts",
+      typesOutputFile: "src/types/colored-icon.ts",
       fileName: "spritesheet.svg",
       iconNameTransformer: (name) => {
         return name.normalize().toLowerCase()
@@ -65,7 +65,7 @@ export default defineConfig({
       inputDir: "assets/duotone/optimized",
       outputDir: "src/components/duotone-icon",
       withTypes: true,
-      typesOutputFile: "src/types/duotone-icon.d.ts",
+      typesOutputFile: "src/types/duotone-icon.ts",
       fileName: "spritesheet.svg",
       iconNameTransformer: (name) => {
         return name.normalize()
